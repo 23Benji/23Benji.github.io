@@ -11,14 +11,24 @@
 }
 
 @keyframes subtlePulse {
-    0% { opacity: 0.6; }
-    50% { opacity: 1; }
-    100% { opacity: 0.6; }
+    0% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.6;
+    }
 }
 
 @keyframes neonFlicker {
-    0%, 100% { text-shadow: 0 0 5px var(--neon-purple), 0 0 10px var(--neon-purple), 0 0 18px var(--soft-purple), 0 0 25px var(--soft-purple); }
-    50% { text-shadow: 0 0 4px var(--neon-purple), 0 0 8px var(--neon-purple), 0 0 15px var(--soft-purple), 0 0 20px var(--soft-purple); }
+    0%, 100% {
+        text-shadow: 0 0 5px var(--neon-purple), 0 0 10px var(--neon-purple), 0 0 18px var(--soft-purple), 0 0 25px var(--soft-purple);
+    }
+    50% {
+        text-shadow: 0 0 4px var(--neon-purple), 0 0 8px var(--neon-purple), 0 0 15px var(--soft-purple), 0 0 20px var(--soft-purple);
+    }
 }
 
 /* --- Header Styles --- */
@@ -41,11 +51,6 @@ header {
     /* Optional: subtle shadow for more depth */
     /* box-shadow: 0 2px 15px rgba(157, 0, 255, 0.1); */
 }
-
-/* Add subtle pulse animation to the border gradient on hover */
-/* Note: Animating border-image directly isn't reliable. We animate the header shadow instead, or opacity of a pseudo-element. */
-/* Let's add a subtle box-shadow glow on scroll perhaps? (requires JS) */
-/* For now, we keep the border static but enhanced */
 
 
 .main-nav {
@@ -74,11 +79,9 @@ header {
 .logo .neon-purple {
     color: var(--neon-purple);
     /* Enhanced Text Shadow with Animation */
-    text-shadow:
-            0 0 5px var(--neon-purple),
-            0 0 10px var(--neon-purple),
-            0 0 18px var(--soft-purple), /* Slightly wider soft glow */
-            0 0 25px var(--soft-purple);
+    text-shadow: 0 0 5px var(--neon-purple),
+    0 0 10px var(--neon-purple),
+    0 0 18px var(--soft-purple), /* Slightly wider soft glow */ 0 0 25px var(--soft-purple);
     animation: neonFlicker 3s infinite alternate ease-in-out; /* Subtle flicker */
 }
 
@@ -137,9 +140,11 @@ header {
     .main-nav {
         justify-content: center; /* Center logo */
     }
+
     .logo a {
         font-size: 1.6em; /* Adjust mobile logo size */
     }
+
     .main-nav ul {
         display: none; /* Hide nav links - Implement burger menu JS/CSS here */
         /* --- BURGER MENU PLACEHOLDER --- */

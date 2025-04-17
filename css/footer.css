@@ -12,8 +12,15 @@
 }
 
 @keyframes pulse-line { /* Keep existing animation */
-    from { opacity: 0.4; box-shadow: 0 0 5px var(--neon-purple); }
-    to { opacity: 1; box-shadow: 0 0 10px var(--soft-purple); } /* Enhanced glow */
+    from {
+        opacity: 0.4;
+        box-shadow: 0 0 5px var(--neon-purple);
+    }
+    to {
+        opacity: 1;
+        box-shadow: 0 0 10px var(--soft-purple);
+    }
+    /* Enhanced glow */
 }
 
 /* --- Footer Styles --- */
