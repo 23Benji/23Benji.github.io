@@ -331,7 +331,7 @@ h2::after {
     background: linear-gradient(-45deg, var(--soft-purple), var(--neon-purple));
     color: var(--black);
     padding: 4px 15px; /* Padding for text */
-    font-size: 0.7em;
+    font-size: 0.9em;
     font-weight: 700;
     text-transform: uppercase;
     text-align: center;

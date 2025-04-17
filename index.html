@@ -1,251 +1,339 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>23Benji - Portfolio</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23Benji - Portfolio</title>
 
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/header.css">
-        <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
 
-        <link rel="preconnect" href="https://kit.fontawesome.com" crossorigin>
-        <script src="https://kit.fontawesome.com/cd08f800e5.js" crossorigin="anonymous"></script>
-    </head>
-    <body>
+    <link rel="preconnect" href="https://kit.fontawesome.com" crossorigin>
+    <script src="https://kit.fontawesome.com/cd08f800e5.js" crossorigin="anonymous"></script>
+</head>
+<body>
 
-        <header id="main-header"></header>
-
-
-        <main>
-            <section id="hero">
-                <div class="hero-content animate-on-scroll">
-                    <div class="hero-image">
-                        <img src="img/Profile.png" alt="A cool abstract graphic or profile picture for 23Benji">
-                    </div>
-                    <div class="hero-text">
-                        <h1>23Benji</h1>
-                        <p>Creative Technology Enthusiast | Exploring Ideas Through Code & Design</p>
-                        <a href="#projects" class="cta-button">View My Work</a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- About Section -->
-            <section id="about" class="section">
-                <div class="container">
-                    <div class="about-content">
-                        <!-- Left Side (Text) -->
-                        <div class="about-text animate-left">
-                            <h2>About Me</h2>
-                            <!-- === Your About Text === -->
-                            <p>Hi, I'm Benji, a passionate student of informatics based in Italy. I enjoy working on creative
-                                tech projects, from games and bots to productivity tools and UI experiments.</p>
-                            <p>I'm driven by curiosity and love diving into new challenges, whether it's through Python, Java,
-                                or Arduino. I'm not a professional web developer—but I know how to turn ideas into functioning
-                                prototypes and enjoy learning in the process.</p>
-                            <p>Let's build or break something cool together!</p>
-                            <!-- === === -->
-                        </div>
-                        <!-- Right Side (Skills) -->
-                        <div class="about-skills animate-right">
-                            <h4>My Skills</h4>
-                            <ul class="skills-list">
-                                <!-- === Your Skills === -->
-                                <li class="skill-item stagger-item"><i class="fab fa-python"></i> Python</li>
-                                <li class="skill-item stagger-item" style="--stagger-delay: 0.1s;"><i class="fab fa-java"></i>
-                                    Java
-                                </li>
-                                <li class="skill-item stagger-item" style="--stagger-delay: 0.2s;"><i class="fas fa-robot"></i>
-                                    Chatbots & AI
-                                </li>
-                                <li class="skill-item stagger-item" style="--stagger-delay: 0.3s;"><i
-                                        class="fas fa-microchip"></i> Arduino Projects
-                                </li>
-                                <li class="skill-item stagger-item" style="--stagger-delay: 0.4s;"><i
-                                        class="fas fa-terminal"></i> Command Line Tools
-                                </li>
-                                <li class="skill-item stagger-item" style="--stagger-delay: 0.5s;"><i
-                                        class="fas fa-puzzle-piece"></i> Game Prototyping
-                                </li>
-                                <!-- === === -->
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- End About Section -->
+<header id="main-header"></header>
 
 
-            <!-- Projects Section -->
-            <section id="projects" class="section">
-                <div class="container">
-                    <h2 class="animate-on-scroll">My Projects</h2>
-                    <div class="project-grid">
+<main>
+    <section id="hero">
+        <div class="hero-content animate-on-scroll">
+            <div class="hero-image">
+                <img src="img/Profile.png" alt="A cool abstract graphic or profile picture for 23Benji">
+            </div>
+            <div class="hero-text">
+                <h1>23Benji</h1>
+                <p>Creative Technology Enthusiast | Exploring Ideas Through Code & Design</p>
+                <a href="#projects" class="cta-button">View My Work</a>
+            </div>
+        </div>
+    </section>
 
-                        <!-- === Project Card 1 (Lexipal) with Badge === -->
-                        <div class="project-card animate-on-scroll stagger-item">
-                            <!-- BADGE ADDED HERE -->
-                            <div class="project-badge">NEW</div>
-                            <!-- END BADGE -->
-
-                            <div class="project-image">
-                                <img src="https://placehold.co/600x400/1a1a1a/9D00FF/png?text=Lexipal" alt="Lexipal Screenshot">
-                            </div>
-                            <div class="project-content">
-                                <h3>Lexipal</h3>
-                                <p>A personal AI assistant built using Python and Flask-SocketIO for web-based interaction.
-                                    Focuses on learning new Languages and having natural conversation with whoever you like.</p>
-                                <div class="project-tech-stack" aria-label="Technologies Used">
-                                    <i class="fab fa-python" title="Python"></i>
-                                    <i class="fas fa-comments" title="Comunication"></i> <!-- Use a specific icon for NLP/AI -->
-                                    <i class="fab fa-js" title="JavaScript"></i>
-                                </div>
-                                <div class="project-links">
-                                    <a href="https://github.com/mp3skater/LexiPal" target="_blank" rel="noopener noreferrer"><i
-                                        class="fab fa-github"></i> See More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- === End Project Card 1 === -->
-
-                        <!-- === Project Card 2: Jumping Squared === -->
-                        <div class="project-card animate-on-scroll stagger-item" style="--stagger-delay: 0.15s;">
-                            <div class="project-image">
-                                <img src="https://placehold.co/600x400/2c2c2c/9D00FF/png?text=Jumping+Squared"
-                                     alt="Jumping Squared Screenshot">
-                            </div>
-                            <div class="project-content">
-                                <h3>Jumping Squared</h3>
-                                <p>A rage-platformer game where a square jumps over deadly traps to reach the goal. Created
-                                    using Java with
-                                    a focus on precise timing and level design.</p>
-                                <div class="project-tech-stack" aria-label="Technologies Used">
-                                    <i class="fab fa-java" title="Java"></i>
-                                    <i class="fas fa-gamepad" title="Game Development"></i>
-                                </div>
-                                <div class="project-links">
-                                    <a href="https://github.com/mp3skater/Jumping-squared" target="_blank"
-                                       rel="noopener noreferrer"><i class="fab fa-github"></i>Start Playing!</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- === End Project Card 2 === -->
-
-                        <!-- === Project Card 3: Tunnel Simulation === -->
-                        <div class="project-card animate-on-scroll stagger-item" style="--stagger-delay: 0.3s;">
-                            <div class="project-image">
-                                <img src="https://placehold.co/600x400/0a0a0a/9D00FF/png?text=Tunnel+Simulation"
-                                     alt="Tunnel Simulation Diagram or Screenshot">
-                            </div>
-                            <div class="project-content">
-                                <h3>Tunnel Visitor Simulation</h3>
-                                <p>Simulates visitor flow for a capacity-limited resource (archaeological tunnel) using a
-                                    client-server architecture. Manages guides per entrance (client-side) and overall tunnel
-                                    capacity (server-side) to control group tours.</p>
-
-                                <div class="project-tech-stack" aria-label="Technologies Used">
-                                    <i class="fab fa-java" title="Java"></i>
-                                    <i class="fas fa-network-wired" title="Client-Server Networking"></i>
-                                    <i class="fas fa-users" title="Concurrency/Simulation"></i>
-                                </div>
-                                <div class="project-links">
-                                    <a href="https://github.com/23Benji/TunnelSim" target="_blank" rel="noopener noreferrer"><i
-                                        class="fab fa-github"></i>Simulate it now!</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- === End Project Card 3 === -->
-
-
-                    </div>
-                </div>
-            </section>
-            <!-- End Projects Section -->
-
-
-            <!-- FAQ Section -->
-            <section id="faq" class="section">
-                <div class="container">
-                    <h2 class="animate-on-scroll">Common Questions</h2>
-                    <div class="animate-on-scroll">
-                        <!-- === Your FAQ Content === -->
-                        <div class="faq-item">
-                            <div class="faq-question">What kinds of projects do you enjoy?</div>
-                            <div class="faq-answer"><p>I enjoy making interactive tools, mini games, chatbots, and exploring
-                                APIs. Anything that's fun, unusual, or useful to others.</p></div>
-                        </div>
-                        <div class="faq-item">
-                            <div class="faq-question">What are you currently working on?</div>
-                            <div class="faq-answer">
-                                <p>Right now, I'm helping a school colleague build an AI called Lexipal — a personal assistant/chatbot project that combines AI and web tech. It’s my way of learning more about language models and real-time interaction.</p>
-                            </div>
-                        </div>
-
-                        <div class="faq-item">
-                            <div class="faq-question">How do you approach learning new tools?</div>
-                            <div class="faq-answer">
-                                <p>I learn by doing. I pick a project and use it as an excuse to try out new libraries, APIs, or frameworks. It's the most fun and effective way for me to learn.</p>
-                            </div>
-                        </div>
-
-                        <div class="faq-item">
-                            <div class="faq-question">What kinds of challenges do you enjoy solving?</div>
-                            <div class="faq-answer">
-                                <p>I enjoy making things work across devices, integrating APIs, and combining hardware with code. If it's interactive and a little outside the box, I’m in.</p>
-                            </div>
-                        </div>
-
-                        <div class="faq-item">
-                            <div class="faq-question">What’s a project you're proud of?</div>
-                            <div class="faq-answer">
-                                <p>Definitely Lexipal. It started as a simple chatbot but grew into a more complete assistant. It’s still evolving, and I love how it's helped me improve my Python, Flask, and front-end skills.</p>
-                            </div>
-                        </div>
-
-                        <!-- === === -->
-                    </div>
-                </div>
-            </section>
-            <!-- End FAQ Section -->
-
-            <!-- Contact Section -->
-            <section id="contact" class="section">
-                <div class="container">
-                    <h2 class="animate-on-scroll">Let's Connect</h2>
-                    <p class="text-center animate-on-scroll" style="margin-bottom: 30px; color: var(--light-purple);">Want to
-                        collaborate or chat about a project idea? Reach out below!<br>(Not active!)</p>
-                    <!-- === Add your actual form handler URL === -->
-                    <form id="contact-form" class="animate-on-scroll" action="https://formspree.io/f/xqapvagk"
-                          method="POST">
-                        <div class="form-group animate-left stagger-item">
-                            <label for="name" class="sr-only">Name</label> <!-- Keep for accessibility -->
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group animate-right stagger-item" style="--stagger-delay: 0.1s;">
-                            <label for="email" class="sr-only">Email</label>
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group animate-on-scroll stagger-item" style="--stagger-delay: 0.2s;">
-                            <label for="message" class="sr-only">Message</label>
-                            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-                        </div>
-                        <div class="form-group animate-on-scroll stagger-item" style="--stagger-delay: 0.3s;">
-                            <button type="submit" class="submit-button">Send Message</button>
-                        </div>
-                    </form>
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="about-content">
+                <!-- Left Side (Text) -->
+                <div class="about-text animate-left">
+                    <h2>About Me</h2>
+                    <!-- === Your About Text === -->
+                    <p>Hi, I'm Benji, a passionate student of informatics based in Italy. I enjoy working on creative
+                        tech projects, from games and bots to productivity tools and UI experiments.</p>
+                    <p>I'm driven by curiosity and love diving into new challenges, whether it's through Python, Java,
+                        or Arduino. I'm not a professional web developer—but I know how to turn ideas into functioning
+                        prototypes and enjoy learning in the process.</p>
+                    <p>Let's build or break something cool together!</p>
                     <!-- === === -->
                 </div>
-            </section>
-            <!-- End Contact Section -->
+                <!-- Right Side (Skills) -->
+                <div class="about-skills animate-right">
+                    <h4>My Skills</h4>
+                    <ul class="skills-list">
+                        <!-- === Your Skills === -->
+                        <li class="skill-item stagger-item"><i class="fab fa-python"></i> Python</li>
+                        <li class="skill-item stagger-item" style="--stagger-delay: 0.1s;"><i class="fab fa-java"></i>
+                            Java
+                        </li>
+                        <li class="skill-item stagger-item" style="--stagger-delay: 0.2s;"><i class="fas fa-robot"></i>
+                            Chatbots & AI
+                        </li>
+                        <li class="skill-item stagger-item" style="--stagger-delay: 0.3s;"><i
+                                class="fas fa-microchip"></i> Arduino Projects
+                        </li>
+                        <li class="skill-item stagger-item" style="--stagger-delay: 0.4s;"><i
+                                class="fas fa-terminal"></i> Command Line Tools
+                        </li>
+                        <li class="skill-item stagger-item" style="--stagger-delay: 0.5s;"><i
+                                class="fas fa-puzzle-piece"></i> Game Prototyping
+                        </li>
+                        <!-- === === -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End About Section -->
 
 
-        </main>
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="animate-on-scroll">My Projects</h2>
+            <div class="project-grid">
 
-        <footer id="main-footer"></footer>
+                <!-- === Project Card 1 (Lexipal) with Badge === -->
+                <div class="project-card animate-on-scroll stagger-item">
+                    <!-- BADGE ADDED HERE -->
+                    <div class="project-badge">TOP</div>
+                    <!-- END BADGE -->
 
-        <script src="js/script.js"></script>
+                    <div class="project-image">
+                        <img src="https://placehold.co/600x400/0a0a0a/9D00FF/png?text=Lexipal" alt="Lexipal Screenshot">
+                    </div>
+                    <div class="project-content">
+                        <h3>Lexipal</h3>
+                        <p>A personal AI assistant built using Python and Flask-SocketIO for web-based interaction.
+                            Focuses on learning new Languages and having natural conversation with whoever you like.</p>
+                        <div class="project-tech-stack" aria-label="Technologies Used">
+                            <i class="fab fa-python" title="Python"></i>
+                            <i class="fas fa-comments" title="Comunication"></i> <!-- Use a specific icon for NLP/AI -->
+                            <i class="fab fa-js" title="JavaScript"></i>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/mp3skater/LexiPal" target="_blank" rel="noopener noreferrer"><i
+                                    class="fab fa-github"></i>Learn a new language Now</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- === End Project Card 1 === -->
 
-    </body>
+                <!-- === Project Card 2: Jumping Squared === -->
+                <div class="project-card animate-on-scroll stagger-item" style="--stagger-delay: 0.15s;">
+                    <div class="project-image">
+                        <img src="https://placehold.co/600x400/0a0a0a/9D00FF/png?text=Jumping+Squared"
+                             alt="Jumping Squared Screenshot">
+                    </div>
+                    <div class="project-content">
+                        <h3>Jumping Squared</h3>
+                        <p>A rage-platformer game where a square jumps over deadly traps to reach the goal. Created
+                            using Java with
+                            a focus on precise timing and level design.</p>
+                        <div class="project-tech-stack" aria-label="Technologies Used">
+                            <i class="fab fa-java" title="Java"></i>
+                            <i class="fas fa-gamepad" title="Game Development"></i>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/mp3skater/Jumping-squared" target="_blank"
+                               rel="noopener noreferrer"><i class="fab fa-github"></i>Start Playing!</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- === End Project Card 2 === -->
+
+                <!-- === Project Card 3: Tunnel Simulation === -->
+                <div class="project-card animate-on-scroll stagger-item" style="--stagger-delay: 0.3s;">
+                    <div class="project-image">
+                        <img src="https://placehold.co/600x400/0a0a0a/9D00FF/png?text=Tunnel+Simulation"
+                             alt="Tunnel Simulation Diagram or Screenshot">
+                    </div>
+                    <div class="project-content">
+                        <h3>Tunnel Visitor Simulation</h3>
+                        <p>Simulates visitor flow for a capacity-limited resource (archaeological tunnel) using a
+                            client-server architecture. Manages guides per entrance (client-side) and overall tunnel
+                            capacity (server-side) to control group tours.</p>
+
+                        <div class="project-tech-stack" aria-label="Technologies Used">
+                            <i class="fab fa-java" title="Java"></i>
+                            <i class="fas fa-network-wired" title="Client-Server Networking"></i>
+                            <i class="fas fa-users" title="Concurrency/Simulation"></i>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/23Benji/TunnelSim" target="_blank" rel="noopener noreferrer"><i
+                                    class="fab fa-github"></i>Simulate it now!</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- === End Project Card 3 === -->
+
+                <!-- === Project Card 4: Vokabeltrainer === -->
+                <div class="project-card animate-on-scroll stagger-item" style="--stagger-delay: 0.4s;">
+                    <div class="project-image">
+                        <img src="https://placehold.co/600x400/0a0a0a/9D00FF/png?text=Vocab. trainer"
+                             alt="Vokabeltrainer Screenshot or Diagram">
+                    </div>
+                    <div class="project-content">
+                        <h3>Vocabulary trainer</h3>
+                        <p>A Java-based vocabulary trainer for learning and managing word pairs. Includes user-friendly
+                            GUI for practicing, adding, and testing vocabulary, tailored for students and language
+                            learners.</p>
+
+                        <div class="project-tech-stack" aria-label="Technologies Used">
+                            <i class="fab fa-java" title="Java"></i>
+                            <i class="fas fa-language" title="Language Learning"></i>
+                            <i class="fas fa-desktop" title="GUI Application"></i>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/23Benji/Vokabeltrainer" target="_blank"
+                               rel="noopener noreferrer">
+                                <i class="fab fa-github"></i>Train your vocab!
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- === End Project Card 4 === -->
+
+                <!-- === Project Card 5: Chat Server === -->
+                <div class="project-card animate-on-scroll stagger-item" style="--stagger-delay: 0.5s;">
+                    <div class="project-image">
+                        <img src="https://placehold.co/600x400/0a0a0a/9D00FF/png?text=Chat+Server"
+                             alt="Chat Server Screenshot or Diagram">
+                    </div>
+                    <div class="project-content">
+                        <h3>Chat Server</h3>
+                        <p>A multi-client chat server implemented in Java. Handles concurrent client connections using
+                            threads, allowing real-time text communication between multiple users over a network.</p>
+
+                        <div class="project-tech-stack" aria-label="Technologies Used">
+                            <i class="fab fa-java" title="Java"></i>
+                            <i class="fas fa-comments" title="Chat Functionality"></i>
+                            <i class="fas fa-network-wired" title="Client-Server Networking"></i>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/23Benji/ChatServer" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github"></i>Start chatting!
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- === End Project Card 5 === -->
+
+                <!-- === Project Card 6: Neon Riders === -->
+                <div class="project-card animate-on-scroll stagger-item" style="--stagger-delay: 0.6s;">
+                    <div class="project-badge">Under Development!</div>
+
+                    <div class="project-image">
+                        <img src="https://placehold.co/600x400/0a0a0a/9D00FF/png?text=Neon+Riders"
+                             alt="Neon Riders Screenshot or Diagram">
+                    </div>
+                    <div class="project-content">
+                        <h3>Neon Riders</h3>
+                        <p>A Python-based multiplayer battle game inspired by Tron. Players control light cycles in a
+                            fast-paced arena, where they must outmaneuver opponents while leaving a trail of light that
+                            can trap enemies.</p>
+
+                        <div class="project-tech-stack" aria-label="Technologies Used">
+                            <i class="fab fa-python" title="Python"></i>
+                            <i class="fas fa-users" title="Multiplayer"></i>
+                            <i class="fas fa-gamepad" title="Game Development"></i>
+                            <i class="fas fa-network-wired" title="Networking"></i>
+                        </div>
+                        <div class="project-links">
+                            <a target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github"></i>Comming soon!
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- === End Project Card 6 === -->
+
+
+            </div>
+        </div>
+    </section>
+    <!-- End Projects Section -->
+
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section">
+        <div class="container">
+            <h2 class="animate-on-scroll">Common Questions</h2>
+            <div class="animate-on-scroll">
+                <!-- === Your FAQ Content === -->
+                <div class="faq-item">
+                    <div class="faq-question">What kinds of projects do you enjoy?</div>
+                    <div class="faq-answer"><p>I enjoy making interactive tools, mini games, chatbots, and exploring
+                        APIs. Anything that's fun, unusual, or useful to others.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What are you currently working on?</div>
+                    <div class="faq-answer">
+                        <p>Right now, I'm helping a school colleague build an AI called Lexipal — a personal
+                            assistant/chatbot project that combines AI and web tech. It’s my way of learning more about
+                            language models and real-time interaction.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">How do you approach learning new tools?</div>
+                    <div class="faq-answer">
+                        <p>I learn by doing. I pick a project and use it as an excuse to try out new libraries, APIs, or
+                            frameworks. It's the most fun and effective way for me to learn.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What kinds of challenges do you enjoy solving?</div>
+                    <div class="faq-answer">
+                        <p>I enjoy making things work across devices, integrating APIs, and combining hardware with
+                            code. If it's interactive and a little outside the box, I’m in.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What’s a project you're proud of?</div>
+                    <div class="faq-answer">
+                        <p>Definitely Lexipal. It started as a simple chatbot but grew into a more complete assistant.
+                            It’s still evolving, and I love how it's helped me improve my Python, Flask, and front-end
+                            skills.</p>
+                    </div>
+                </div>
+
+                <!-- === === -->
+            </div>
+        </div>
+    </section>
+    <!-- End FAQ Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="animate-on-scroll">Let's Connect</h2>
+            <p class="text-center animate-on-scroll" style="margin-bottom: 30px; color: var(--light-purple);">Want to
+                collaborate or chat about a project idea? Reach out below!</p>
+            <!-- === Add your actual form handler URL === -->
+            <form id="contact-form" class="animate-on-scroll" action="https://formspree.io/f/xqapvagk"
+                  method="POST">
+                <div class="form-group animate-left stagger-item">
+                    <label for="name" class="sr-only">Name</label> <!-- Keep for accessibility -->
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group animate-right stagger-item" style="--stagger-delay: 0.1s;">
+                    <label for="email" class="sr-only">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group animate-on-scroll stagger-item" style="--stagger-delay: 0.2s;">
+                    <label for="message" class="sr-only">Message</label>
+                    <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                </div>
+                <div class="form-group animate-on-scroll stagger-item" style="--stagger-delay: 0.3s;">
+                    <button type="submit" class="submit-button">Send Message</button>
+                </div>
+            </form>
+            <!-- === === -->
+        </div>
+    </section>
+    <!-- End Contact Section -->
+
+
+</main>
+
+<footer id="main-footer"></footer>
+
+<script src="js/script.js"></script>
+
+</body>
 </html>
