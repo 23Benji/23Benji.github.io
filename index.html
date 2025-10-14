@@ -11,6 +11,88 @@
 
     <link rel="preconnect" href="https://kit.fontawesome.com" crossorigin>
     <script src="https://kit.fontawesome.com/cd08f800e5.js" crossorigin="anonymous"></script>
+
+    <style>
+        :root {
+            --primary-orange: #FF8C00;
+            --accent-amber: #FFA500;
+            --light-yellow: #FFDAB9;
+            --black: #0a0a0a;
+            --dark-grey: #1a1a1a;
+            --white: #ffffff;
+            --grey: #cccccc;
+        }
+
+        body {
+            background-color: var(--black);
+            color: var(--grey);
+        }
+
+        .legal-page-content {
+            padding-top: 100px;
+            padding-bottom: 60px;
+            min-height: calc(100vh - 250px);
+        }
+
+        .legal-page-content h1 {
+            color: var(--primary-orange); /* CHANGED */
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+
+        .legal-page-content h2 {
+            color: var(--white);
+            margin-top: 40px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--accent-amber); /* CHANGED */
+            padding-bottom: 5px;
+            text-align: left;
+            font-size: 1.8em;
+        }
+
+        .legal-page-content h2::after {
+            display: none;
+        }
+
+        .legal-page-content p,
+        .legal-page-content ul {
+            margin-bottom: 1.2rem;
+            line-height: 1.7;
+        }
+
+        .legal-page-content ul {
+            list-style: disc;
+            margin-left: 25px;
+        }
+
+        .legal-page-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .legal-page-content a {
+            color: var(--light-yellow); /* CHANGED */
+            text-decoration: underline;
+        }
+
+        .legal-page-content a:hover {
+            color: var(--white);
+            text-shadow: 0 0 5px var(--light-yellow); /* CHANGED */
+        }
+
+        .container {
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .effective-date {
+            text-align: center;
+            margin-bottom: 40px;
+            font-style: italic;
+            color: var(--grey);
+        }
+    </style>
+
 </head>
 <body>
 
@@ -21,7 +103,7 @@
     <section id="hero">
         <div class="hero-content animate-on-scroll">
             <div class="hero-image">
-                <img src="img/Profile.png" alt="A cool abstract graphic or profile picture for 23Benji">
+                <img src="img/Profile2.png" alt="A cool abstract graphic or profile picture for 23Benji">
             </div>
             <div class="hero-text">
                 <h1>23Benji</h1>
@@ -60,39 +142,58 @@
                 <div class="about-skills animate-right">
                     <h4>My Skills</h4>
                     <ul class="skills-list">
-                        <!-- === Your Skills === -->
+                        <!-- === Programming Languages === -->
                         <li class="skill-item stagger-item" style="--stagger-delay: 0.1s;"><i class="fab fa-python"></i>
                             Python
                         </li>
-                        <li class="skill-item stagger-item" style="--stagger-delay: 0.1s;"><i class="fab fa-java"></i>
+                        <li class="skill-item stagger-item" style="--stagger-delay: 0.2s;"><i class="fab fa-java"></i>
                             Java
                         </li>
-                        <li class="skill-item stagger-item" style="--stagger-delay: 0.2s;"><i class="fas fa-robot"></i>
+
+                        <!-- === AI & Robotics === -->
+                        <li class="skill-item stagger-item" style="--stagger-delay: 0.3s;"><i class="fas fa-robot"></i>
                             Chatbots & AI
                         </li>
-                        <li class="skill-item stagger-item" style="--stagger-delay: 0.3s;"><i
-                                class="fas fa-microchip"></i> Arduino Projects
-                        </li>
-                        <li class="skill-item stagger-item" style="--stagger-delay: 0.4s;"><i
-                                class="fas fa-network-wired"></i> Network Programming
+
+                        <!-- === Hardware & Systems === -->
+                        <li class="skill-item stagger-item" style="--stagger-delay: 0.4s;"><i class="fab fa-linux"></i>
+                            Linux
                         </li>
                         <li class="skill-item stagger-item" style="--stagger-delay: 0.5s;"><i
+                                class="fas fa-microchip"></i> Arduino Projects
+                        </li>
+
+                        <!-- === Networking === -->
+                        <li class="skill-item stagger-item" style="--stagger-delay: 0.6s;"><i
+                                class="fas fa-network-wired"></i> Network Programming
+                        </li>
+
+                        <!-- === GUI & Frontend === -->
+                        <li class="skill-item stagger-item" style="--stagger-delay: 0.7s;"><i
                                 class="fas fa-desktop"></i> GUI Development
                         </li>
-                        <li class="skill-item stagger-item" style="--stagger-delay: 0.6s;"><i class="fab fa-html5"></i>
+                        <li class="skill-item stagger-item" style="--stagger-delay: 0.8s;"><i class="fab fa-html5"></i>
                             Web Frontend (HTML/CSS)
                         </li>
-                        <li class="skill-item stagger-item" style="--stagger-delay: 0.7s;"><i
+                        <li class="skill-item stagger-item" style="--stagger-delay: 0.9s;"><i class="fab fa-react"></i>
+                            React
+                        </li>
+
+                        <!-- === Backend & Databases === -->
+                        <li class="skill-item stagger-item" style="--stagger-delay: 1.0s;"><i
+                                class="fas fa-database"></i> SQL
+                        </li>
+                        <li class="skill-item stagger-item" style="--stagger-delay: 1.1s;"><i class="fas fa-server"></i>
+                            Backend Development
+                        </li>
+
+                        <!-- === Game Development === -->
+                        <li class="skill-item stagger-item" style="--stagger-delay: 1.2s;"><i
                                 class="fas fa-gamepad"></i> Game Development
                         </li>
-                        <li class="skill-item stagger-item" style="--stagger-delay: 0.8s;"><i
-                                class="fas fa-puzzle-piece"></i> Game Prototyping
-                        </li>
-
-                        <!-- === === -->
                     </ul>
-
                 </div>
+
             </div>
         </div>
     </section>
@@ -105,14 +206,45 @@
             <h2 class="animate-on-scroll">My Projects</h2>
             <div class="project-grid">
 
+
+                <!-- === Project Card : Desk Jarvis  === -->
+                <div class="project-card animate-on-scroll stagger-item" style="--stagger-delay: 0.6s;">
+                    <div class="project-badge">Prototype</div>
+
+                    <div class="project-image">
+                        <img src="https://placehold.co/600x400/0a0a0a/FF8C00/png?text=Desk+Jarvis"
+                             alt="Desk Jarvis Screenshot or Diagram">
+                    </div>
+                    <div class="project-content">
+                        <h3>Desk Jarvis</h3>
+                        <p>“Something intelligent is about to illuminate your workspace.”</p>
+
+                        <div class="project-tech-stack" aria-label="Technologies Used">
+                            <i class="fab fa-react" title="React"></i>
+                            <i class="fas fa-lightbulb" title="Desk Lamp"></i>
+                            <i class="fas fa-microchip" title="Raspberry Pi"></i>
+                            <i class="fas fa-video" title="Camera"></i>
+                        </div>
+                        <div class="project-links">
+                            <a target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github"></i>Comming up!
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- === End Project Card  === -->
+
+
+
+
                 <!-- === Project Card 1 (Lexipal) with Badge === -->
                 <div class="project-card animate-on-scroll stagger-item">
                     <!-- BADGE ADDED HERE -->
-                    <div class="project-badge">TOP</div>
+                    <div class="project-badge">Beta</div>
                     <!-- END BADGE -->
 
                     <div class="project-image">
-                        <img src="https://placehold.co/600x400/0a0a0a/9D00FF/png?text=Lexipal" alt="Lexipal Screenshot">
+                        <img src="https://placehold.co/600x400/0a0a0a/FF8C00/png?text=Lexipal" alt="Lexipal Screenshot">
                     </div>
                     <div class="project-content">
                         <h3>Lexipal</h3>
@@ -125,7 +257,7 @@
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/mp3skater/LexiPal" target="_blank" rel="noopener noreferrer"><i
-                                    class="fab fa-github"></i>Learn a new language Now</a>
+                                    class="fab fa-github"></i>Learn a new language Now!</a>
                         </div>
                     </div>
                 </div>
@@ -134,9 +266,12 @@
                 <!-- === Project Card 2: Jumping Squared === -->
                 <div class="project-card animate-on-scroll stagger-item" style="--stagger-delay: 0.15s;">
                     <div class="project-image">
-                        <img src="https://placehold.co/600x400/0a0a0a/9D00FF/png?text=Jumping+Squared"
+                        <img src="https://placehold.co/600x400/0a0a0a/FF8C00/png?text=Jumping+Squared"
                              alt="Jumping Squared Screenshot">
                     </div>
+                    <div class="project-badge">Top Game</div>
+
+
                     <div class="project-content">
                         <h3>Jumping Squared</h3>
                         <p>A rage-platformer game where a square jumps over deadly traps to reach the goal. Created
@@ -159,7 +294,7 @@
                 <!-- === Project Card 3: Tunnel Simulation === -->
                 <div class="project-card animate-on-scroll stagger-item" style="--stagger-delay: 0.3s;">
                     <div class="project-image">
-                        <img src="https://placehold.co/600x400/0a0a0a/9D00FF/png?text=Tunnel+Simulation"
+                        <img src="https://placehold.co/600x400/0a0a0a/FF8C00/png?text=Tunnel+Simulation"
                              alt="Tunnel Simulation Diagram or Screenshot">
                     </div>
                     <div class="project-content">
@@ -184,7 +319,7 @@
                 <!-- === Project Card 4: Vokabeltrainer === -->
                 <div class="project-card animate-on-scroll stagger-item" style="--stagger-delay: 0.4s;">
                     <div class="project-image">
-                        <img src="https://placehold.co/600x400/0a0a0a/9D00FF/png?text=Vocab. trainer"
+                        <img src="https://placehold.co/600x400/0a0a0a/FF8C00/png?text=Vocab. trainer"
                              alt="Vokabeltrainer Screenshot or Diagram">
                     </div>
                     <div class="project-content">
@@ -211,7 +346,7 @@
                 <!-- === Project Card 5: Chat Server === -->
                 <div class="project-card animate-on-scroll stagger-item" style="--stagger-delay: 0.5s;">
                     <div class="project-image">
-                        <img src="https://placehold.co/600x400/0a0a0a/9D00FF/png?text=Chat+Server"
+                        <img src="https://placehold.co/600x400/0a0a0a/FF8C00/png?text=Chat+Server"
                              alt="Chat Server Screenshot or Diagram">
                     </div>
                     <div class="project-content">
@@ -233,36 +368,6 @@
                 </div>
                 <!-- === End Project Card 5 === -->
 
-                <!-- === Project Card 6: Neon Riders === -->
-                <div class="project-card animate-on-scroll stagger-item" style="--stagger-delay: 0.6s;">
-                    <div class="project-badge">Under Development!</div>
-
-                    <div class="project-image">
-                        <img src="https://placehold.co/600x400/0a0a0a/9D00FF/png?text=Neon+Riders"
-                             alt="Neon Riders Screenshot or Diagram">
-                    </div>
-                    <div class="project-content">
-                        <h3>Neon Riders</h3>
-                        <p>A Python-based multiplayer battle game inspired by Tron. Players control light cycles in a
-                            fast-paced arena, where they must outmaneuver opponents while leaving a trail of light that
-                            can trap enemies.</p>
-
-                        <div class="project-tech-stack" aria-label="Technologies Used">
-                            <i class="fab fa-python" title="Python"></i>
-                            <i class="fas fa-users" title="Multiplayer"></i>
-                            <i class="fas fa-gamepad" title="Game Development"></i>
-                            <i class="fas fa-network-wired" title="Networking"></i>
-                        </div>
-                        <div class="project-links">
-                            <a target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-github"></i>Comming soon!
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- === End Project Card 6 === -->
-
-
             </div>
         </div>
     </section>
@@ -274,45 +379,40 @@
         <div class="container">
             <h2 class="animate-on-scroll">Common Questions</h2>
             <div class="animate-on-scroll">
-                <!-- === Your FAQ Content === -->
+                <!-- === Your FAQ Content (Casual Version) === -->
                 <div class="faq-item">
                     <div class="faq-question">What kinds of projects do you enjoy?</div>
-                    <div class="faq-answer"><p>I enjoy making interactive tools, mini games, chatbots, and exploring
-                        APIs. Anything that's fun, unusual, or useful to others.</p></div>
+                    <div class="faq-answer">
+                        <p>I love building things that mix creativity and tech — stuff that moves, reacts, or just makes
+                            people say “wait, how does that work?”.</p>
+                    </div>
                 </div>
+
                 <div class="faq-item">
                     <div class="faq-question">What are you currently working on?</div>
                     <div class="faq-answer">
-                        <p>Right now, I'm helping a school colleague build an AI called Lexipal — a personal
-                            assistant/chatbot project that combines AI and web tech. It’s my way of learning more about
-                            language models and real-time interaction.</p>
+                        <p>Secret...</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">How do you approach learning new tools?</div>
                     <div class="faq-answer">
-                        <p>I learn by doing. I pick a project and use it as an excuse to try out new libraries, APIs, or
-                            frameworks. It's the most fun and effective way for me to learn.</p>
+                        <p>I usually jump straight into a project and learn as I go. Breaking things (and fixing them
+                            again) is the best teacher for me.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">What kinds of challenges do you enjoy solving?</div>
                     <div class="faq-answer">
-                        <p>I enjoy making things work across devices, integrating APIs, and combining hardware with
-                            code. If it's interactive and a little outside the box, I’m in.</p>
+                        <p>I like figuring out how to make hardware and software talk to each other — especially when it
+                            ends up doing something useful or just plain cool.</p>
                     </div>
                 </div>
 
-                <div class="faq-item">
-                    <div class="faq-question">What’s a project you're proud of?</div>
-                    <div class="faq-answer">
-                        <p>Definitely Lexipal. It started as a simple chatbot but grew into a more complete assistant.
-                            It’s still evolving, and I love how it's helped me improve my Python, Flask, and front-end
-                            skills.</p>
-                    </div>
-                </div>
+
+            </div>
 
                 <!-- === === -->
             </div>
@@ -324,7 +424,7 @@
     <section id="contact" class="section">
         <div class="container">
             <h2 class="animate-on-scroll">Let's Connect</h2>
-            <p class="text-center animate-on-scroll" style="margin-bottom: 30px; color: var(--light-purple);">Want to
+            <p class="text-center animate-on-scroll" style="margin-bottom: 30px; color: var(--light-yellow);">Want to
                 collaborate or chat about a project idea? Reach out below!</p>
             <!-- === Add your actual form handler URL === -->
             <form id="contact-form" class="animate-on-scroll" action="https://formspree.io/f/xqapvagk"
