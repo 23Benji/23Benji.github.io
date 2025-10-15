@@ -1,55 +1,27 @@
 /* === css/header.css === */
 
-/* Import variables if not globally available (best practice) */
-/* Make sure these variables are defined in your main style.css */
 :root {
-    --neon-purple: #9D00FF;
-    --soft-purple: #BF40BF;
-    --light-purple: #E0B0FF;
+    --primary-white: #FFFFFF;
+    --light-grey-text: #EAEAEA;
     --black: #0a0a0a;
-    --white: #ffffff;
 }
 
-@keyframes subtlePulse {
-    0% {
-        opacity: 0.6;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0.6;
-    }
-}
-
-@keyframes neonFlicker {
-    0%, 100% {
-        text-shadow: 0 0 5px var(--neon-purple), 0 0 10px var(--neon-purple), 0 0 18px var(--soft-purple), 0 0 25px var(--soft-purple);
-    }
-    50% {
-        text-shadow: 0 0 4px var(--neon-purple), 0 0 8px var(--neon-purple), 0 0 15px var(--soft-purple), 0 0 20px var(--soft-purple);
-    }
-}
-
-/* --- Header Styles --- */
+/* --- Header Styles (Glassmorphism) --- */
 header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     padding: 15px 5%;
-    /* Slightly enhanced background */
-    background: rgba(10, 10, 10, 0.7); /* Slightly less opaque black */
-    backdrop-filter: blur(12px); /* Increased blur */
-    -webkit-backdrop-filter: blur(12px); /* Safari prefix */
-    /* Enhanced bottom border using border-image */
-    border-bottom: 1px solid transparent; /* Need this for border-image */
-    border-image: linear-gradient(to right, rgba(157, 0, 255, 0.1), var(--neon-purple), rgba(157, 0, 255, 0.1)) 1;
+    background: rgba(10, 10, 10, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid transparent;
+    border-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0)) 1;
     border-image-slice: 1;
     z-index: 1000;
-    transition: background 0.4s ease, box-shadow 0.4s ease; /* Smooth transition */
-    /* Optional: subtle shadow for more depth */
-    /* box-shadow: 0 2px 15px rgba(157, 0, 255, 0.1); */
+    transition: background 0.4s ease, box-shadow 0.4s ease;
 }
 
 
@@ -62,95 +34,87 @@ header {
 }
 
 .logo a {
-    display: inline-block; /* Needed for transform */
-    font-size: 1.9em; /* Slightly larger */
+    display: inline-block;
+    font-size: 1.9em;
     font-weight: 700;
-    color: var(--white);
+    color: var(--primary-white);
     text-decoration: none;
-    letter-spacing: 1.5px; /* Slightly wider spacing */
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy effect */
+    letter-spacing: 1.5px;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .logo a:hover {
-    transform: scale(1.05); /* Zoom effect on hover */
+    transform: scale(1.05);
 }
 
-
-.logo .neon-purple {
-    color: var(--neon-purple);
-    /* Enhanced Text Shadow with Animation */
-    text-shadow: 0 0 5px var(--neon-purple),
-    0 0 10px var(--neon-purple),
-    0 0 18px var(--soft-purple), /* Slightly wider soft glow */ 0 0 25px var(--soft-purple);
-    animation: neonFlicker 3s infinite alternate ease-in-out; /* Subtle flicker */
+/* Updated class name from header.html */
+.logo .glow-white {
+    color: var(--primary-white);
+    /* Neon White Effect */
+    text-shadow:
+            0 0 5px rgba(255, 255, 255, 0.8),
+            0 0 10px rgba(255, 255, 255, 0.6),
+            0 0 20px rgba(255, 255, 255, 0.2);
 }
 
 .main-nav ul {
     list-style: none;
     display: flex;
-    gap: 40px; /* Increased gap */
+    gap: 40px;
     margin: 0;
     padding: 0;
 }
 
 .main-nav .nav-link {
-    color: var(--white);
+    color: var(--primary-white);
     text-decoration: none;
-    font-size: 1.05em; /* Slightly larger */
-    padding: 8px 12px; /* Increased padding for background hover */
+    font-size: 1.05em;
+    padding: 8px 12px;
     position: relative;
-    transition: color 0.3s ease, text-shadow 0.3s ease, background-color 0.3s ease; /* Added background-color transition */
-    border-radius: 5px; /* Rounded corners for background */
-    letter-spacing: 0.5px; /* Slight spacing */
-    z-index: 1; /* Ensure text is above potential pseudo-elements */
+    transition: color 0.3s ease, text-shadow 0.3s ease, background-color 0.3s ease;
+    border-radius: 5px;
+    letter-spacing: 0.5px;
+    z-index: 1;
 }
 
-/* Underline Effect - unchanged */
 .main-nav .nav-link::after {
     content: '';
     position: absolute;
-    bottom: -2px; /* Adjusted slightly for padding */
+    bottom: -2px;
     left: 50%;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, var(--neon-purple), var(--soft-purple));
-    box-shadow: 0 0 8px var(--neon-purple);
-    transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Width transition only */
+    background: var(--primary-white);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+    transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     transform: translateX(-50%);
-    z-index: -1; /* Behind text */
+    z-index: -1;
 }
 
-/* Enhanced Hover/Active State */
 .main-nav .nav-link:hover,
 .main-nav .nav-link.active {
-    color: var(--light-purple);
-    text-shadow: 0 0 6px var(--neon-purple);
-    /* Added subtle background glow */
-    background-color: rgba(157, 0, 255, 0.15);
-    box-shadow: 0 0 10px rgba(157, 0, 255, 0.2); /* Soft outer glow */
+    color: var(--primary-white);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
 .main-nav .nav-link:hover::after,
 .main-nav .nav-link.active::after {
-    width: calc(100% - 16px); /* Underline stops before padding edges */
+    width: calc(100% - 16px);
 }
 
 /* --- Responsive Adjustments --- */
 @media (max-width: 768px) {
     .main-nav {
-        justify-content: center; /* Center logo */
+        justify-content: center;
     }
 
     .logo a {
-        font-size: 1.6em; /* Adjust mobile logo size */
+        font-size: 1.6em;
     }
 
     .main-nav ul {
-        display: none; /* Hide nav links - Implement burger menu JS/CSS here */
-        /* --- BURGER MENU PLACEHOLDER --- */
-        /* Example: You would add a button here and */
-        /* potentially absolute position the nav items */
-        /* when toggled visible */
-        /* --- --- --- --- --- --- --- --- --- */
+        display: none;
     }
 }

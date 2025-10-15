@@ -1,140 +1,110 @@
 /* === css/footer.css === */
 
-/* Import variables if needed */
 :root {
-    --neon-purple: #9D00FF;
-    --soft-purple: #BF40BF;
-    --light-purple: #E0B0FF;
+    --primary-white: #FFFFFF;
+    --light-grey-text: #EAEAEA;
     --black: #0a0a0a;
-    --dark-grey: #1a1a1a;
-    --white: #ffffff;
     --grey: #cccccc;
-}
-
-@keyframes pulse-line { /* Keep existing animation */
-    from {
-        opacity: 0.4;
-        box-shadow: 0 0 5px var(--neon-purple);
-    }
-    to {
-        opacity: 1;
-        box-shadow: 0 0 10px var(--soft-purple);
-    }
-    /* Enhanced glow */
 }
 
 /* --- Footer Styles --- */
 footer {
-    /* Subtle background texture/gradient */
-    background-color: var(--black); /* Fallback */
-    background-image: linear-gradient(rgba(10, 10, 10, 0.9), var(--black)),
-    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="50" height="50"><defs><pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(157, 0, 255, 0.07)" stroke-width="0.5"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>'); /* Subtle grid pattern */
-    background-size: cover, 50px 50px; /* Control pattern size */
-
-    color: var(--grey); /* Lighter base text */
-    padding: 60px 5% 30px; /* Increased padding */
-    margin-top: 100px; /* More space before footer */
-
-    /* Enhanced Gradient Top Border */
-    border-top: 1px solid transparent; /* Required for border-image */
-    border-image: linear-gradient(to right, rgba(10, 10, 10, 0), var(--soft-purple), rgba(10, 10, 10, 0)) 1;
+    background-color: var(--black);
+    color: var(--grey);
+    padding: 60px 5% 30px;
+    margin-top: 100px;
+    border-top: 1px solid transparent;
+    border-image: linear-gradient(to right, rgba(10, 10, 10, 0), rgba(255, 255, 255, 0.4), rgba(10, 10, 10, 0)) 1;
     border-image-slice: 1;
-
     position: relative;
-    overflow: hidden; /* Needed for pseudo-elements and potential overflow */
-
-    /* Optional: Add a subtle glow effect */
-    /* box-shadow: 0 -5px 25px rgba(157, 0, 255, 0.1); */
+    overflow: hidden;
 }
 
-/* Keep Decorative Lines */
+/* Decorative Lines */
 footer::before,
 footer::after {
     content: '';
     position: absolute;
-    height: 50px; /* Slightly taller */
+    height: 50px;
     width: 2px;
-    background: linear-gradient(to bottom, rgba(157, 0, 255, 0), var(--neon-purple), rgba(157, 0, 255, 0));
-    box-shadow: 0 0 8px var(--neon-purple); /* Slightly stronger shadow */
-    animation: pulse-line 5s infinite alternate ease-in-out; /* Slightly slower */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), var(--primary-white), rgba(255, 255, 255, 0));
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
 }
 
 footer::before {
     top: 0;
-    left: 15%; /* Adjust position */
+    left: 15%;
 }
 
 footer::after {
     bottom: 0;
-    right: 15%; /* Adjust position */
-    animation-delay: 2.5s;
+    right: 15%;
 }
 
 .footer-content {
-    max-width: 1100px; /* Match container width if needed */
+    max-width: 1100px;
     margin: 0 auto;
     text-align: center;
-    position: relative; /* Ensure content is above pseudo-elements */
+    position: relative;
     z-index: 2;
 }
 
 .footer-section {
-    margin-bottom: 25px; /* More spacing */
+    margin-bottom: 25px;
 }
 
-/* Enhanced Social Icon Links */
+/* Social Icon Links */
 .footer-section.social a {
-    color: var(--grey); /* Slightly lighter than default #ccc */
-    margin: 0 18px; /* Wider spacing */
-    font-size: 1.7em; /* Slightly larger */
-    display: inline-block; /* Allows transform */
-    transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy transform */
+    color: var(--grey);
+    margin: 0 18px;
+    font-size: 1.7em;
+    display: inline-block;
+    transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .footer-section.social a:hover {
-    color: var(--neon-purple);
-    /* Stronger glow */
-    text-shadow: 0 0 12px var(--neon-purple), 0 0 18px var(--soft-purple);
-    transform: translateY(-4px) scale(1.05); /* Lift and slight scale */
+    color: var(--primary-white);
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.7);
+    transform: translateY(-4px) scale(1.05);
 }
 
-/* Enhanced Text Links */
+/* Text Links */
 .footer-section.links a {
     color: var(--grey);
     margin: 0 12px;
     text-decoration: none;
-    font-size: 0.95em; /* Slightly larger */
-    position: relative; /* For potential pseudo-element effects */
+    font-size: 0.95em;
+    position: relative;
     padding: 4px 0;
     transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-.footer-section.links a::after { /* Simple underline on hover */
+.footer-section.links a::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     width: 0;
     height: 1px;
-    background: var(--light-purple);
+    background: var(--light-grey-text);
     transition: width 0.3s ease-in-out;
 }
 
 .footer-section.links a:hover {
-    color: var(--white);
-    text-shadow: 0 0 5px var(--light-purple); /* Subtle glow */
+    color: var(--primary-white);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
 .footer-section.links a:hover::after {
-    width: 100%; /* Activate underline */
+    width: 100%;
 }
 
-/* Copyright text styling */
+/* Copyright text */
 .footer-bottom {
-    margin-top: 40px; /* More space */
+    margin-top: 40px;
     font-size: 0.9em;
-    color: #aaa; /* Lighter grey */
-    border-top: 1px solid rgba(255, 255, 255, 0.15); /* Slightly more visible divider */
-    padding-top: 25px; /* More space */
+    color: #aaa;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 25px;
     letter-spacing: 0.5px;
 }
