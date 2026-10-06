@@ -1,172 +1,228 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<!doctype html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>23Benji | Creative Technologist</title>
-  <script type="module" crossorigin src="/assets/index-CeskeszO.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-x9HCzbSO.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Benji — Designer & Developer</title>
+  <meta name="description" content="Benji (23Benji) — designer & developer from Italy, studying Computer Science at unibz. Open to freelance. DeskJarvis, HearMi, Workout Tracker, Dolce Bosco Fontana and more." />
+  <meta name="theme-color" content="#0b0c0f" />
+  <meta property="og:title" content="Benji — Designer & Developer" />
+  <meta property="og:description" content="Less talk, more code. Selected work by 23Benji." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <script type="module" crossorigin src="./assets/index-CEv7PHxE.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-BbJPX_TU.css">
 </head>
-<body class="font-inter selection:bg-white/30">
-  
-  <div id="cursor-ring" class="pointer-events-none fixed left-0 top-0 z-[100] hidden md:block h-8 w-8 rounded-full border border-white mix-blend-difference -translate-x-1/2 -translate-y-1/2"></div>
-  <div id="cursor-dot" class="pointer-events-none fixed left-0 top-0 z-[100] hidden md:block h-1.5 w-1.5 rounded-full bg-white mix-blend-difference -translate-x-1/2 -translate-y-1/2"></div>
+<body class="is-loading">
+  <canvas id="gl" aria-hidden="true"></canvas>
+  <div class="grid-marks" aria-hidden="true"></div>
 
-  <nav class="fixed top-0 left-0 w-full z-50 mix-blend-difference px-6 md:px-12 py-8 flex justify-between items-center opacity-0" id="navbar">
-    <a href="#" class="font-space font-bold text-white uppercase tracking-[0.2em] text-sm hover:opacity-80 transition-opacity">23Benji</a>
-    <div class="hidden md:flex gap-8">
-      <a href="#about" class="text-[10px] uppercase tracking-widest text-white opacity-50 hover:opacity-100 transition-opacity">About</a>
-      <a href="#projects" class="text-[10px] uppercase tracking-widest text-white opacity-50 hover:opacity-100 transition-opacity">Projects</a>
-      <a href="#contact" class="text-[10px] uppercase tracking-widest text-white opacity-50 hover:opacity-100 transition-opacity">Contact</a>
+  <!-- ===== Loader + gate ===== -->
+  <div class="loader" id="loader" role="dialog" aria-label="Loading">
+    <svg class="loader__lines" id="loader-lines" aria-hidden="true"></svg>
+    <div class="loader__corner m">
+      <span class="m--dim">B—23</span>
+      <span>Benji<br />Designer &amp; Developer</span>
     </div>
-  </nav>
+    <div class="loader__center">
+      <button class="gate-ring m" id="gate-enter" disabled aria-label="Enter with sound">
+        <svg viewBox="0 0 148 148" aria-hidden="true">
+          <circle class="track" cx="74" cy="74" r="73" />
+          <circle class="prog" id="gate-prog" cx="74" cy="74" r="73" />
+          <circle class="hover" cx="74" cy="74" r="73" />
+        </svg>
+        <span class="gate-ring__label"><span class="count" id="gate-count">000</span><span class="enter">Enter</span></span>
+      </button>
+      <button class="gate-mute m" id="gate-mute">Enter without sound</button>
+      <p class="loader__tag m">Less talk, more code.</p>
+    </div>
+    <p class="loader__status m" id="loader-status">Initialising</p>
+  </div>
 
-  <div class="smooth-scroll" data-scroll-container>
-    
-    <section data-scroll-section class="relative h-screen w-full flex items-center px-6 md:px-12 overflow-hidden">
-      <div id="scene-container" class="absolute inset-0 z-0 pointer-events-none" data-scroll data-scroll-speed="-3">
-        <canvas id="bg-canvas" class="w-full h-full"></canvas>
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#000_100%)]"></div>
-        <div class="absolute bottom-0 left-0 w-full h-64 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
-      </div>
+  <!-- ===== HUD ===== -->
+  <header class="hud hud-top">
+    <a class="brand m reveal" href="#top" data-hover>
+      <span class="brand__ver">B—23</span>
+      <b>Benji</b>
+      <span>Designer &amp; Developer</span>
+    </a>
+    <nav class="nav reveal d1" aria-label="Primary">
+      <a href="#work" data-nav="work">Work</a>
+      <a href="#about" data-nav="about">About</a>
+      <a href="#archive" data-nav="archive">Archive</a>
+      <a href="#contact" data-nav="contact">Contact</a>
+    </nav>
+    <div class="hud-right reveal d2">
+      <a class="status m" href="#contact" data-hover><i></i>Open to freelance</a>
+      <span class="clock m" aria-label="Local time in Italy"><span id="clock">ITA --:--:--</span></span>
+      <a class="pill" href="#contact" data-hover>Say hello</a>
+    </div>
+  </header>
 
-      <div class="relative z-10 w-full md:w-[70%]" id="hero-content" data-scroll data-scroll-speed="1">
-        <p class="hero-fade font-inter text-[10px] uppercase tracking-[0.4em] text-white/40 mb-8 opacity-0 translate-y-8">Creative Technology Enthusiast — Italy</p>
-        
-        <h1 class="font-space font-black text-[64px] leading-[1.05] md:text-[120px] md:leading-[0.95] text-white tracking-tighter">
-          <div class="overflow-hidden pb-4"><div class="hero-word translate-y-[110%]">Code.</div></div>
-          <div class="overflow-hidden pb-4"><div class="hero-word translate-y-[110%]">Design.</div></div>
-          <div class="overflow-hidden pb-4"><div class="hero-word translate-y-[110%]">Build.</div></div>
-        </h1>
+  <aside class="hud ruler m reveal d3" aria-hidden="true">
+    <div class="ruler__ticks" id="ruler-ticks"></div>
+    <div class="ruler__mark" id="ruler-mark"><span class="ruler__label" id="ruler-label">Top</span></div>
+  </aside>
 
-        <p class="hero-fade font-inter text-[16px] md:text-[18px] text-white/50 max-w-[32ch] leading-relaxed mt-8 opacity-0 translate-y-8">
-          Informatics student exploring the edge of hardware & software — games, bots, AI tools and everything in between.
-        </p>
-
-        <a href="#projects" class="hero-fade mt-12 group flex items-center gap-4 w-fit opacity-0 cursor-pointer">
-          <div class="h-[1px] w-8 bg-white transition-all duration-300 group-hover:w-14"></div>
-          <span class="text-[10px] uppercase tracking-widest text-white/50 group-hover:text-white transition-colors">View Work</span>
-        </a>
-      </div>
-
-      <div class="absolute bottom-12 left-6 md:left-12 flex flex-col items-center gap-2">
-        <div id="scroll-line" class="w-[1px] h-16 bg-white/30 origin-top scale-y-0"></div>
-        <div id="scroll-dot" class="w-0.5 h-0.5 bg-white/40 rounded-full"></div>
-      </div>
-    </section>
-
-    <div data-scroll-section class="flex w-full overflow-hidden border-y border-white/10 bg-black py-4">
-      <div class="marquee-track">
-        <div class="marquee-content flex"></div>
+  <aside class="hud panels reveal d3" id="panels" aria-label="Scene controls">
+    <div class="panel" id="panel-quat">
+      <div class="panel__head m"><span>Prism.quaternion</span><button data-collapse aria-label="Collapse">−</button></div>
+      <div class="panel__body">
+        <div class="quat m"><i></i><span id="qx">.00</span><span id="qy">.00</span><span id="qz">.00</span><span id="qw">1.0</span></div>
+        <div class="gizmo" id="gizmo" title="Drag to rotate the prism">
+          <svg viewBox="-42 -42 84 84" id="gizmo-svg" aria-hidden="true"></svg>
+        </div>
+        <button class="panel__reset m" id="quat-reset">Reset quaternion</button>
       </div>
     </div>
+    <div class="panel" id="panel-mat">
+      <div class="panel__head m"><span>Prism.material</span><button data-collapse aria-label="Collapse">−</button></div>
+      <div class="panel__body m" id="mat-body"></div>
+    </div>
+    <div class="panel" id="panel-field" hidden>
+      <div class="panel__head m"><span>Voxel.field</span><button data-collapse aria-label="Collapse">−</button></div>
+      <dl class="panel__body stats m" id="field-stats"></dl>
+    </div>
+  </aside>
 
-    <section id="about" data-scroll-section class="py-40 px-6 md:px-12 w-full mx-auto panel orange overflow-hidden">
-      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-24">
-        <div class="cinematic-text">
-          <div class="relative">
-            <span class="font-space font-black text-[180px] leading-none text-white/10 select-none" data-scroll data-scroll-speed="2">01</span>
-            <h2 class="scroll-move-left font-space font-black text-[56px] md:text-[72px] text-white leading-[0.9] -mt-12 relative z-10 tracking-tighter">About <br /> Me</h2>
-          </div>
-          <div class="mt-16 flex gap-12">
-            <div><p class="font-space font-black text-[36px] text-white">10</p><p class="text-[10px] uppercase tracking-widest text-white/40 mt-1">Projects Built</p></div>
-            <div><p class="font-space font-black text-[36px] text-white">3+</p><p class="text-[10px] uppercase tracking-widest text-white/40 mt-1">Years Coding</p></div>
+  <div class="hud hud-corner reveal d4">
+    <button class="icon-btn m" id="term-btn" aria-label="Open terminal" data-hover>&gt;_<span class="m">Terminal</span></button>
+    <button class="icon-btn m" id="sound-btn" aria-label="Toggle sound" data-hover><span class="bars"><i></i><i></i><i></i><i></i></span><span class="m" id="sound-label">Sound off</span></button>
+  </div>
+
+  <!-- ===== Content ===== -->
+  <main id="top">
+    <section class="hero" id="hero" aria-label="Intro">
+      <h1 class="sr-only">Benji — Designer &amp; Developer from Italy</h1>
+      <p class="hero__tag m reveal d2" id="hero-tag">Less talk, more code.</p>
+      <div class="hero__intro reveal d3">
+        <span class="m">Benji — Italy · Open to freelance</span>
+        <span id="hero-intro"></span>
+      </div>
+      <div class="hero__log reveal d4">
+        <h2 class="m">Log</h2>
+        <ol id="log"></ol>
+      </div>
+      <div class="hero__scroll m reveal d5" aria-hidden="true"><span>Scroll</span><i></i></div>
+    </section>
+
+    <section class="work" id="work" aria-label="Selected work">
+      <div class="work__stage">
+        <p class="work__label m">01 — Selected work</p>
+        <canvas class="work__fallback" id="work-fallback" width="1280" height="720" aria-hidden="true"></canvas>
+        <ol class="index" id="index">
+          <li class="index__head m"><span>Index</span><span id="index-count"></span></li>
+        </ol>
+        <div class="caption">
+          <div class="dashes m" id="dashes" aria-hidden="true"></div>
+          <div class="caption__swap" id="caption">
+            <div class="caption__meta"><span class="m" id="cap-year"></span><span class="mark" id="cap-mark"></span></div>
+            <h2 class="caption__title" id="cap-title"></h2>
+            <p class="caption__line" id="cap-line"></p>
+            <ul class="chips" id="cap-tags"></ul>
           </div>
         </div>
-
-        <div class="flex flex-col justify-center gap-10 mt-10 md:mt-0">
-          <div class="cinematic-text">
-            <p class="text-[20px] md:text-[24px] text-white/70 leading-relaxed tracking-tight">Hi, I'm <span class="text-white font-semibold">Benji</span>, a passionate informatics student based in <span class="text-white font-semibold">Italy</span>.</p>
-          </div>
-          <div class="cinematic-text">
-            <p class="text-[16px] text-white/40 leading-relaxed mb-6">Whether it's Python, Java, or Arduino, I enjoy diving into new concepts, experimenting, and turning ideas into working prototypes. Breaking things (and fixing them again) is the best teacher.</p>
-            <div class="flex flex-wrap gap-3" id="skill-pills"></div>
-          </div>
-        </div>
+        <a class="view-btn m" id="view-btn" href="#/work/deskjarvis" data-hover>View project <b aria-hidden="true">+</b></a>
       </div>
     </section>
 
-    <section id="projects" data-scroll-section class="py-40 px-6 md:px-12 w-full mx-auto panel plain transition-colors duration-500 overflow-hidden">
-      <div class="max-w-7xl mx-auto">
-        <div class="cinematic-text mb-24 flex justify-between items-end">
-          <div>
-            <p class="text-[10px] uppercase tracking-[0.4em] text-white/30 mb-6">Selected Work</p>
-            <h2 class="scroll-move-right font-space font-black text-[72px] md:text-[120px] leading-none text-white tracking-tighter">Projects</h2>
+    <div class="light" id="light">
+      <section class="about" id="about" aria-labelledby="about-title">
+        <div class="wrap">
+          <div class="section-head"><span class="m">02 — About</span><span class="m">Benji / 23Benji</span></div>
+          <div class="about__top">
+            <div>
+              <h2 class="bars-title" id="about-title"><span>Less talk,</span><span>more code.</span></h2>
+              <p class="about__sub">Designer &amp; developer from Italy. I build things that move, react, or just make people say “wait — how does that work?”</p>
+            </div>
+            <div class="wire" aria-hidden="true">
+              <span class="wire__label wire__label--a m">Prism.wireframe</span>
+              <div class="wire__cube" id="wire-cube"><i></i><i></i><i></i><i></i><i></i><i></i>
+                <div class="wire__core"><i></i></div>
+              </div>
+              <span class="wire__label wire__label--b m" id="wire-rot">rot 0.00 / 0.00</span>
+            </div>
           </div>
-          <p class="hidden md:block text-[14px] text-white/25 pb-4">6 projects</p>
+
+          <div class="about__body">
+            <p class="about__bio">Hi, I’m Benji — I study <em>Computer Science at unibz</em>, the Free University of Bozen-Bolzano. Whether it’s Python, Java or Arduino, I love diving into new concepts, experimenting, and turning ideas into working prototypes. Breaking things (and fixing them again) is the best teacher.</p>
+            <div class="about__now">
+              <span class="m">Currently into</span>
+              <span>Cybersecurity &amp; ethical hacking, AI integration, and getting hardware and software to talk to each other. Open to collaborating on security-focused projects and wordless design that speaks for itself.</span>
+            </div>
+            <div class="stats-row" id="stats"></div>
+          </div>
+
+          <div class="skills" id="skills"></div>
+
+          <div class="notes">
+            <div class="section-head"><span class="m">Field notes</span><span class="m">FAQ</span></div>
+            <div id="notes"></div>
+          </div>
         </div>
+      </section>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-32" id="project-grid">
-          </div>
-      </div>
-    </section>
-
-    <section data-scroll-section class="py-40 px-6 md:px-12 max-w-7xl mx-auto border-t border-white/5 overflow-hidden">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-24">
-        <div class="cinematic-text">
-          <p class="text-[10px] uppercase tracking-[0.4em] text-white/30 mb-6">FAQ</p>
-          <h2 class="scroll-move-left font-space font-black text-[56px] md:text-[72px] leading-[1] text-white tracking-tighter">Common <br/> Questions</h2>
+      <section class="archive" id="archive" aria-labelledby="archive-title">
+        <div class="wrap">
+          <div class="section-head"><span class="m" id="archive-title">03 — Archive</span><span class="m">Smaller builds, experiments &amp; school projects</span></div>
+          <ul class="rows" id="rows"></ul>
         </div>
+      </section>
+    </div>
 
-        <div class="flex flex-col justify-center" id="faq-container">
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="contact__inner">
+        <p class="contact__label m">04 — Contact</p>
+        <h2 class="contact__big" id="contact-title"><a href="https://github.com/23Benji" target="_blank" rel="noopener" data-hover>Say hello.</a></h2>
+        <div class="contact__row">
+          <div class="contact__left">
+            <p>Open to freelance work and collaborations. Want to chat about a project idea? Reach out — always happy to explore new ideas.</p>
+            <div class="contact__links m" id="contact-links"></div>
           </div>
-      </div>
-    </section>
-
-    <section id="contact" data-scroll-section class="py-40 px-6 md:px-12 max-w-7xl mx-auto border-t border-white/5 overflow-hidden">
-      <div class="cinematic-text mb-24">
-        <p class="text-[10px] uppercase tracking-[0.4em] text-white/30 mb-6">Let's Connect</p>
-        <h2 class="scroll-move-right font-space font-black text-[96px] md:text-[180px] leading-[0.8] text-white tracking-tighter">Say <br/> Hello.</h2>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-24">
-        <div class="cinematic-text">
-          <form class="flex flex-col gap-12" id="contact-form">
-            <div class="flex flex-col gap-3">
-              <label class="text-[10px] uppercase tracking-[0.2em] text-white/40">Your Name</label>
-              <input required type="text" name="name" placeholder="Benji" class="w-full bg-transparent border-b border-white/20 pb-4 outline-none text-[16px] text-white focus:border-white transition-colors" />
+          <form class="cform" id="cform" action="https://formspree.io/f/xqapvagk" method="POST" data-state="idle">
+            <p class="cform__head m"><span>Message.form</span><span id="cform-state">status: idle</span></p>
+            <label class="cfield"><span class="m">01 — Name</span><input name="name" required autocomplete="name" placeholder="Your name" /></label>
+            <label class="cfield"><span class="m">02 — Email</span><input name="email" type="email" required autocomplete="email" placeholder="you@example.com" /></label>
+            <label class="cfield"><span class="m">03 — Message</span><textarea name="message" rows="4" required placeholder="Let’s build something…"></textarea></label>
+            <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <div class="cform__foot">
+              <button class="cform__send m" type="submit" data-hover><span id="cform-btn">Send message</span><b aria-hidden="true">→</b></button>
+              <p class="cform__note m" id="cform-note" role="status" aria-live="polite"></p>
             </div>
-            <div class="flex flex-col gap-3">
-              <label class="text-[10px] uppercase tracking-[0.2em] text-white/40">Email Address</label>
-              <input required type="email" name="email" placeholder="hello@example.com" class="w-full bg-transparent border-b border-white/20 pb-4 outline-none text-[16px] text-white focus:border-white transition-colors" />
-            </div>
-            <div class="flex flex-col gap-3">
-              <label class="text-[10px] uppercase tracking-[0.2em] text-white/40">Message</label>
-              <textarea required name="message" rows="3" placeholder="Let's build something..." class="w-full bg-transparent border-b border-white/20 pb-4 outline-none text-[16px] text-white focus:border-white transition-colors resize-none"></textarea>
-            </div>
-            <button type="submit" id="submit-btn" class="group mt-6 self-start rounded-full border border-white/30 px-10 py-5 flex items-center gap-4 transition-all duration-300 hover:bg-white hover:text-black">
-              <span id="submit-text" class="text-[12px] uppercase tracking-widest font-bold">Send Message</span>
-              <i data-lucide="arrow-up-right" class="h-5 w-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
-            </button>
           </form>
         </div>
-
-        <div class="cinematic-text flex flex-col justify-between">
-          <p class="text-[16px] md:text-[18px] text-white/50 leading-relaxed max-w-sm tracking-tight">
-            Want to collaborate or chat about a project idea? Reach out — always happy to explore new ideas.
-          </p>
-          <div class="mt-16 flex flex-col border-t border-white/10">
-            <a href="https://github.com/23Benji" target="_blank" class="group flex justify-between items-center py-6 border-b border-white/10">
-              <div class="flex flex-col gap-1">
-                <span class="text-[14px] font-semibold text-white">GitHub</span>
-                <span class="text-[12px] text-white/30">github.com/23Benji</span>
-              </div>
-              <i data-lucide="arrow-up-right" class="h-5 w-5 text-white/30 transition-transform group-hover:text-white group-hover:translate-x-1 group-hover:-translate-y-1"></i>
-            </a>
-          </div>
-        </div>
       </div>
+      <footer class="foot m">
+        <span>© 2026 Benji — Italy</span>
+        <span>Less talk, more code.</span>
+        <a id="verse" href="#" target="_blank" rel="noopener"></a>
+        <a href="#top" data-hover>Back to top ↑</a>
+      </footer>
     </section>
+  </main>
 
-    <footer data-scroll-section class="mt-20">
-      <div class="flex w-full overflow-hidden border-y border-white/10 bg-black py-4">
-        <div class="marquee-track" id="footer-marquee"></div>
-      </div>
-      <div class="flex justify-between items-center px-6 md:px-12 py-8 bg-black">
-        <p class="text-[10px] uppercase tracking-widest text-white/25">© 2026 23Benji — Italy</p>
-        <a href="https://www.bible.com/bible/59/JHN.3.16.ESV" class="text-[10px] text-white hover:text-white/75">John 3:16</a>
-      </div>
-    </footer>
-  </div> 
+  <!-- ===== Project view ===== -->
+  <div class="pv" id="pv" role="dialog" aria-modal="true" aria-labelledby="pv-title">
+    <button class="pv__close m" id="pv-close" data-hover>To index <b aria-hidden="true">✕</b></button>
+    <div class="pv__scroll" id="pv-scroll" data-lenis-prevent><div class="pv__inner" id="pv-inner"></div></div>
+  </div>
+
+  <!-- ===== Terminal ===== -->
+  <div class="term" id="term" role="dialog" aria-label="Terminal">
+    <div class="term__bar"><span>benji@23 — zsh</span><button id="term-close" aria-label="Close terminal">✕</button></div>
+    <div class="term__out" id="term-out" aria-live="polite" data-lenis-prevent></div>
+    <form class="term__in" id="term-form" autocomplete="off">
+      <label for="term-input">benji@23:~$</label>
+      <input id="term-input" spellcheck="false" autocapitalize="off" />
+    </form>
+  </div>
+
+  <div class="peek" id="peek" aria-hidden="true"><canvas width="360" height="225"></canvas></div>
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <div class="cursor__cross"></div>
+    <div class="cursor__ring"><span>VIEW</span></div>
+    <div class="cursor__xy" id="cursor-xy"></div>
+  </div>
+
+  <noscript><p style="position:relative;z-index:9;padding:40px">This site uses JavaScript and WebGL. Find my work at <a href="https://github.com/23Benji">github.com/23Benji</a>.</p></noscript>
 </body>
 </html>
