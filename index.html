@@ -9,8 +9,8 @@
   <meta property="og:title" content="Benji — Designer & Developer" />
   <meta property="og:description" content="Less talk, more code. Selected work by 23Benji." />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-  <script type="module" crossorigin src="./assets/index-BjYjJC1J.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-D1OGPhy1.css">
+  <script type="module" crossorigin src="./assets/index-D1JNwkoY.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-ATsKSaW4.css">
 </head>
 <body class="is-loading">
   <canvas id="gl" aria-hidden="true"></canvas>
@@ -85,6 +85,10 @@
   </aside>
 
   <div class="hud hud-corner reveal d4">
+    <button class="next-cue" id="next-cue" aria-label="Scroll to the next section" data-hover>
+      <span class="next-cue__label m"><span class="next-cue__k">Next</span><span id="next-label">Work</span></span>
+      <span class="next-cue__ring" aria-hidden="true"><svg viewBox="0 0 36 36"><circle class="t" cx="18" cy="18" r="16.5" /><circle class="p" id="next-prog" cx="18" cy="18" r="16.5" /></svg><i id="next-arrow">↓</i></span>
+    </button>
     <button class="icon-btn m" id="term-btn" aria-label="Open terminal" data-hover>&gt;_<span class="m">Terminal</span></button>
     <button class="icon-btn m" id="sound-btn" aria-label="Toggle sound" data-hover><span class="bars"><i></i><i></i><i></i><i></i></span><span class="m" id="sound-label">Sound off</span></button>
   </div>
@@ -107,6 +111,7 @@
 
     <section class="work" id="work" aria-label="Selected work">
       <div class="work__stage">
+        <span class="ghost ghost--dark" id="ghost-work" aria-hidden="true">WORK</span>
         <p class="work__label m">01 — Selected work</p>
         <canvas class="work__fallback" id="work-fallback" width="1280" height="720" aria-hidden="true"></canvas>
         <ol class="index" id="index">
@@ -127,14 +132,15 @@
 
     <div class="light" id="light">
       <section class="about" id="about" aria-labelledby="about-title">
+        <span class="ghost" data-ghost="-1" aria-hidden="true">ABOUT</span>
         <div class="wrap">
-          <div class="section-head"><span class="m">02 — About</span><span class="m">Benji / 23Benji</span></div>
+          <div class="section-head" data-reveal><span class="m">02 — About</span><span class="m">Benji / 23Benji</span></div>
           <div class="about__top">
             <div>
-              <h2 class="bars-title" id="about-title"><span>Less talk,</span><span>more code.</span></h2>
-              <p class="about__sub">Designer &amp; developer from Bolzano, Italy. I build things that move, react, or just make people say “wait — how does that work?”</p>
+              <h2 class="bars-title" id="about-title" data-reveal><span>Less talk,</span><span>more code.</span></h2>
+              <p class="about__sub" data-reveal style="--i:4">Designer &amp; developer from Bolzano, Italy. I build things that move, react, or just make people say “wait — how does that work?”</p>
             </div>
-            <div class="wire" aria-hidden="true">
+            <div class="wire" aria-hidden="true" data-reveal style="--i:2">
               <span class="wire__label wire__label--a m">Prism.wireframe</span>
               <div class="wire__cube" id="wire-cube"><i></i><i></i><i></i><i></i><i></i><i></i>
                 <div class="wire__core"><i></i></div>
@@ -144,30 +150,31 @@
           </div>
 
           <div class="about__body">
-            <p class="about__bio">Hi, I’m Benji — after my Matura at TFO Max Valier, I now study <em>Computer Science at unibz</em>, the Free University of Bozen-Bolzano. Whether it’s Python, Java or Arduino, I love diving into new concepts, experimenting, and turning ideas into working prototypes. Breaking things (and fixing them again) is the best teacher.</p>
+            <p class="about__bio" data-reveal>Hi, I’m Benji — after my Matura at TFO Max Valier, I now study <em>Computer Science at unibz</em>, the Free University of Bozen-Bolzano. Whether it’s Python, Java or Arduino, I love diving into new concepts, experimenting, and turning ideas into working prototypes. Breaking things (and fixing them again) is the best teacher.</p>
             <dl class="facts">
-              <div><dt class="m">Based in</dt><dd>Bolzano, Italy</dd></div>
-              <div><dt class="m">Studying</dt><dd>Computer Science, unibz <span>← Matura at TFO Max Valier</span></dd></div>
-              <div><dt class="m">Speaks</dt><dd>Romanian · Italian · German · English</dd></div>
-              <div><dt class="m">Off screen</dt><dd>Piano, guitar, bass &amp; drums · drone shots &amp; cinematic edits · training</dd></div>
-              <div><dt class="m">Currently into</dt><dd>Cybersecurity &amp; ethical hacking, AI integration, and getting hardware and software to talk to each other.</dd></div>
-              <div><dt class="m">Available</dt><dd>Freelance — websites, landing pages &amp; web apps</dd></div>
+              <div data-reveal style="--i:1"><dt class="m">Based in</dt><dd>Bolzano, Italy</dd></div>
+              <div data-reveal style="--i:2"><dt class="m">Studying</dt><dd>Computer Science, unibz <span>← Matura at TFO Max Valier</span></dd></div>
+              <div data-reveal style="--i:3"><dt class="m">Speaks</dt><dd>Romanian · Italian · German · English</dd></div>
+              <div data-reveal style="--i:4"><dt class="m">Off screen</dt><dd>Piano, guitar, bass &amp; drums · drone shots &amp; cinematic edits · training</dd></div>
+              <div data-reveal style="--i:5"><dt class="m">Currently into</dt><dd>Cybersecurity &amp; ethical hacking, AI integration, and getting hardware and software to talk to each other.</dd></div>
+              <div data-reveal style="--i:6"><dt class="m">Available</dt><dd>Freelance — websites, landing pages &amp; web apps</dd></div>
             </dl>
-            <div class="stats-row" id="stats"></div>
+            <div class="stats-row" id="stats" data-reveal></div>
           </div>
 
           <div class="skills" id="skills"></div>
 
           <div class="notes">
-            <div class="section-head"><span class="m">Field notes</span><span class="m">FAQ</span></div>
+            <div class="section-head" data-reveal><span class="m">Field notes</span><span class="m">FAQ</span></div>
             <div id="notes"></div>
           </div>
         </div>
       </section>
 
       <section class="archive" id="archive" aria-labelledby="archive-title">
+        <span class="ghost" data-ghost="1" aria-hidden="true">ARCHIVE</span>
         <div class="wrap">
-          <div class="section-head"><span class="m" id="archive-title">03 — Archive</span><span class="m">Smaller builds, experiments &amp; school projects</span></div>
+          <div class="section-head" data-reveal><span class="m" id="archive-title">03 — Archive</span><span class="m">Smaller builds, experiments &amp; school projects</span></div>
           <ul class="rows" id="rows"></ul>
         </div>
       </section>
@@ -175,14 +182,14 @@
 
     <section class="contact" id="contact" aria-labelledby="contact-title">
       <div class="contact__inner">
-        <p class="contact__label m">04 — Contact</p>
-        <h2 class="contact__big" id="contact-title"><a href="https://github.com/23Benji" target="_blank" rel="noopener" data-hover>Say hello.</a></h2>
+        <p class="contact__label m" data-reveal>04 — Contact</p>
+        <h2 class="contact__big" id="contact-title" data-reveal><a href="https://github.com/23Benji" target="_blank" rel="noopener" data-hover>Say hello.</a></h2>
         <div class="contact__row">
-          <div class="contact__left">
+          <div class="contact__left" data-reveal style="--i:2">
             <p>Open to freelance work — websites, landing pages and web apps. Based in Bolzano, working in Romanian, Italian, German and English. Want to chat about a project idea? Reach out — always happy to explore new ideas.</p>
             <div class="contact__links m" id="contact-links"></div>
           </div>
-          <form class="cform" id="cform" action="https://formspree.io/f/xqapvagk" method="POST" data-state="idle">
+          <form class="cform" id="cform" data-reveal style="--i:4" action="https://formspree.io/f/xqapvagk" method="POST" data-state="idle">
             <p class="cform__head m"><span>Message.form</span><span id="cform-state">status: idle</span></p>
             <label class="cfield"><span class="m">01 — Name</span><input name="name" required autocomplete="name" placeholder="Your name" /></label>
             <label class="cfield"><span class="m">02 — Email</span><input name="email" type="email" required autocomplete="email" placeholder="you@example.com" /></label>
@@ -195,7 +202,7 @@
           </form>
         </div>
       </div>
-      <footer class="foot m">
+      <footer class="foot m" data-reveal>
         <span>© 2026 Benji — Bolzano, Italy</span>
         <span>Less talk, more code.</span>
         <a id="verse" href="#" target="_blank" rel="noopener"></a>
